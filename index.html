@@ -7,6 +7,29 @@
     font-family: Brush Script MT;
   }
 
+  .palette-object-images{
+   width:100px;
+   height:100px;
+   object-fit:scale-down;
+  }
+  
+  .paint-palette{
+    padding: 10x;
+    border-radius: 25px;
+    height: 720px;
+    width: 100px;
+    background-color: hsl(192, 38%, 88%);
+    font-family: Brush Script MT;
+    text-align: center;
+    font-size: 25;
+  }
+  
+/*Scale down will take the necessary specified space that is 100px x 100px without stretching the image*/
+
+
+}
+  }
+  
   /*drop down source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_hover */
 
   .dropbtn {
@@ -55,7 +78,7 @@
   </head>
   <body style="background-color:white;">
     <h1>
-      create your van gogh
+      create your own van gogh
     </h1>
 
     <div class="dropdown" style="float:right;">
@@ -69,16 +92,20 @@
       </div>
     </div>
 
-    <div label="paint-palette">
-      <img src="cloud3.png">
-      <img src="cloud2.png">
-      <img src="cloud1.png">
-      <img src="cypress.png">
-      <img src="clouds.png">
-      <img src="grass.png">
+    <div class="paint-palette">
+      <text class = "palette-text">palette</text>
+      <img src="sky.png" class ="palette-object-images">
+      <img src="cloud3.png" class = "palette-object-images">
+      <img src="cloud2.png" class = "palette-object-images">
+      <img src="cloud1.png" class = "palette-object-images">
+      <img src="cypress.png" class = "palette-object-images">
+      <img src="grass.png" class = "palette-object-images">
       <img src="4dfc1140fc78606e000769337f97c7de.png
-">
-      <img src="sky.png">
+" class = "palette-object-images">
+
+      <div class = "canvas">
+        
+      </div>
 
     </div>
 
