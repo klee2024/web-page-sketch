@@ -27,13 +27,17 @@
         margin-bottom: 10px;
         font-size: 25;
       }
+      
+      .header-and-palette{
+        z-index: 1;
+        position: absolute;
+      }
 
       .canvas {
         padding: 5px;
         border-radius: 25px;
         height: 720px;
-        width: 700px;
-        background-color: hsl(192, 56%, 97%);
+        width: 1000px;
         font-family: Brush Script MT;
         text-align: center;
         font-size: 25;
@@ -50,12 +54,13 @@
         display: flex;
         justify-content: space-between;
       }
-      
-    .canvas img {
-      width: 200px;
-      height: auto;
-      position: absolute;
-    }
+
+      .canvas img {
+        width: 200px;
+        height: auto;
+        position: absolute;
+        overflow: hidden;
+      }
 
 
       /*drop down source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_hover */
@@ -107,7 +112,8 @@
 
   <body>
     <body style="background-color:white;">
-      <div class="header-menu">
+      <div class = "header-and-palette">
+        <div class="header-menu">
         <h1 class="page-title">
           create your own van gogh
         </h1>
@@ -134,8 +140,6 @@
       </div>
 
 
-      <div id="globalVariableDisplay"></div>
-
 
       <div class="paint-palette">
         <!--<text>palette</text>-->
@@ -145,18 +149,12 @@
         <img src="cloud1.png" id="cloud3" class="palette-object-images" onlick="choose_object(this)">
         <img src="cypress.png" id="cypress" class="palette-object-images" onlick="choose_object(this)">
         <img src="grass.png" id="grasses" class="palette-object-images" onlick="choose_object(this)">
-        <img id="long-grass" src="4dfc1140fc78606e000769337f97c7de.png
+        <img id="long-grass" src="grass_field.png
 " class="palette-object-images" onlick="choose_object(this)">
       </div>
 
-      <div class="canvas" id="canvas">
-
       </div>
-
-      <p id="demo">JavaScript can change the style of an HTML element.</p>
-      <button type="button" onclick="myFunction()">Click Me!</button>
-
-      <text id="output">hi</text>
+      <div class="canvas" id="canvas">
 
       <script>
         // this is javascript code
@@ -168,8 +166,6 @@
           let clickedImage = event.target;
           let clickedImageSRC = clickedImage.getAttribute('src');
           current_selected_object = clickedImageSRC;
-          const globalVariableDisplay = document.getElementById('globalVariableDisplay');
-          globalVariableDisplay.textContent = 'Global variable value: ' + current_selected_object;
         }
 
         const sky = document.getElementById('sky');
@@ -189,13 +185,6 @@
         longGrasses.addEventListener('click', set_current_selected_object);
 
 
-
-        function myFunction() {
-          document.getElementById("demo").style.fontSize = "25px";
-          document.getElementById("demo").style.color = "red";
-          document.getElementById("demo").style.backgroundColor = "yellow";
-        }
-
         // Get the reference to the canvas element
         const canvas = document.getElementById('canvas');
 
@@ -203,28 +192,54 @@
         canvas.addEventListener('click', createImage);
 
         // Function to create a new image at the clicked location
-         function createImage(event) {
-      // Get the mouse coordinates relative to the canvas
-      const x = event.clientX - canvas.getBoundingClientRect().left;
-      const y = event.clientY - canvas.getBoundingClientRect().top;
-           
-      // Check if the click is within the boundaries of the canvas
-      if (x >= 0 && x <= canvas.offsetWidth && y >= 0 && y <= canvas.offsetHeight && current_selected_object !== '') {
-        // Create a new image element
-        const newImage = document.createElement('img');
+        function createImage(event) {
+          // Get the mouse coordinates relative to the canvas
+          let x = event.clientX - canvas.getBoundingClientRect().left;
+          let y = event.clientY - canvas.getBoundingClientRect().top;
 
-        // Set the source of the new image
-        newImage.src = current_selected_object; // Set the source of your image here
 
-        // Set the position of the new image
-        newImage.style.position = 'absolute';
-        newImage.style.left = x + 'px';
-        newImage.style.top = y + 'px';
+          if (current_selected_object === 'sky.png') {
+            x -= 60
+            y += 100
+          } else if (current_selected_object === 'cloud3.png') {
+            x -= 100
+            y += 50
+          } else if (current_selected_object === 'cloud2.png') {
+            x -= 100
+            y += 10
+          } else if (current_selected_object === 'cloud1.png') {
+            x -= 100
+            y += 10
+          } 
+          else if (current_selected_object === 'grass.png') {
+            x -= 100
+            y -= 20
+          }
+          else if (current_selected_object === 'cypress.png') {
+            x -= 100
+            y += 0
+          } 
+           else if (current_selected_object === 'grass_field.png') {
+            x -= 80
+            y += 70
+          } 
 
-        // Append the new image to the canvas
-        canvas.appendChild(newImage);
-      }
-    }
+          if (current_selected_object !== '') {
+            // Create a new image element
+            const newImage = document.createElement('img');
+
+            // Set the source of the new image
+            newImage.src = current_selected_object; // Set the source of your image here
+
+            // Set the position of the new image
+            newImage.style.position = 'absolute';
+            newImage.style.left = x + 'px';
+            newImage.style.top = y + 'px';
+
+            // Append the new image to the canvas
+            canvas.appendChild(newImage);
+          }
+        }
       </script>
 
     </body>
