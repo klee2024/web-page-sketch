@@ -37,6 +37,7 @@
         font-family: Brush Script MT;
         text-align: center;
         font-size: 25;
+        overflow: hidden;
       }
 
       .page-title {
@@ -49,6 +50,12 @@
         display: flex;
         justify-content: space-between;
       }
+      
+    .canvas img {
+      width: 200px;
+      height: auto;
+      position: absolute;
+    }
 
 
       /*drop down source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_hover */
@@ -142,7 +149,7 @@
 " class="palette-object-images" onlick="choose_object(this)">
       </div>
 
-      <div class="canvas">
+      <div class="canvas" id="canvas">
 
       </div>
 
@@ -153,7 +160,7 @@
 
       <script>
         // this is javascript code
-        
+
         // getting te 
         let current_selected_object = '';
 
@@ -188,6 +195,36 @@
           document.getElementById("demo").style.color = "red";
           document.getElementById("demo").style.backgroundColor = "yellow";
         }
+
+        // Get the reference to the canvas element
+        const canvas = document.getElementById('canvas');
+
+        // Add a click event listener to the canvas
+        canvas.addEventListener('click', createImage);
+
+        // Function to create a new image at the clicked location
+         function createImage(event) {
+      // Get the mouse coordinates relative to the canvas
+      const x = event.clientX - canvas.getBoundingClientRect().left;
+      const y = event.clientY - canvas.getBoundingClientRect().top;
+           
+      // Check if the click is within the boundaries of the canvas
+      if (x >= 0 && x <= canvas.offsetWidth && y >= 0 && y <= canvas.offsetHeight && current_selected_object !== '') {
+        // Create a new image element
+        const newImage = document.createElement('img');
+
+        // Set the source of the new image
+        newImage.src = current_selected_object; // Set the source of your image here
+
+        // Set the position of the new image
+        newImage.style.position = 'absolute';
+        newImage.style.left = x + 'px';
+        newImage.style.top = y + 'px';
+
+        // Append the new image to the canvas
+        canvas.appendChild(newImage);
+      }
+    }
       </script>
 
     </body>
