@@ -7,37 +7,56 @@
     font-family: Brush Script MT;
   }
 
-  .palette-object-images{
-   width:100px;
-   height:100px;
-   object-fit:scale-down;
+  .palette-object-images {
+    width: 90px;
+    height: 90px;
+    object-fit: scale-down;
   }
-  
-  .paint-palette{
-    padding: 10x;
+
+  .paint-palette {
+    padding: 5px;
+    border-radius: 25px;
+    height: 100px;
+    width: 700px;
+    background-color: hsl(192, 38%, 88%);
+    font-family: Brush Script MT;
+    vertical-align: text-top;
+    margin-bottom: 10px;
+    font-size: 25;
+  }
+
+  .canvas {
+    padding: 5px;
     border-radius: 25px;
     height: 720px;
-    width: 100px;
-    background-color: hsl(192, 38%, 88%);
+    width: 700px;
+    background-color: hsl(192, 56%, 97%);
     font-family: Brush Script MT;
     text-align: center;
     font-size: 25;
   }
-  
-/*Scale down will take the necessary specified space that is 100px x 100px without stretching the image*/
 
-
-}
+  .page-title{
+    height: 40px;
+    width: 280px;
   }
   
+  .header-menu{
+    display:flex;
+    justify-content: space-between;
+  }
+
+
   /*drop down source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_hover */
 
   .dropbtn {
+    border-radius: 25px;
     background-color: grey;
     color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
+    margin-top:10px;
   }
 
   .dropdown {
@@ -74,13 +93,13 @@
   }
 </style>
 
-<body>
-  </head>
-  <body style="background-color:white;">
-    <h1>
-      create your own van gogh
-    </h1>
 
+<body>
+  <body style="background-color:white;">
+    <div class = "header-menu">
+      <h1 class = "page-title">
+        create your own van gogh
+      </h1>
     <div class="dropdown" style="float:right;">
       <button class="dropbtn">photo credit</button>
       <div class="dropdown-content">
@@ -91,23 +110,30 @@
         <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fblog.fabrics-store.com%2F2023%2F09%2F01%2Ffs-colour-series-waffle-sky-inspired-by-vincent-van-goghs-swirling-skies%2F&psig=AOvVaw2tOrGA54OCRXqe2Aw6aj4Y&ust=1713368465771000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCICqspKJx4UDFQAAAAAdAAAAABAE" target="_blank">image 4</a>
       </div>
     </div>
+    
+    </div>
+
+
+    <!---
+    
+-->
 
     <div class="paint-palette">
-      <text class = "palette-text">palette</text>
-      <img src="sky.png" class ="palette-object-images">
-      <img src="cloud3.png" class = "palette-object-images">
-      <img src="cloud2.png" class = "palette-object-images">
-      <img src="cloud1.png" class = "palette-object-images">
-      <img src="cypress.png" class = "palette-object-images">
-      <img src="grass.png" class = "palette-object-images">
+      <!--<text>palette</text>-->
+      <img src="sky.png" class="palette-object-images">
+      <img src="cloud3.png" class="palette-object-images">
+      <img src="cloud2.png" class="palette-object-images">
+      <img src="cloud1.png" class="palette-object-images">
+      <img src="cypress.png" class="palette-object-images">
+      <img src="grass.png" class="palette-object-images">
       <img src="4dfc1140fc78606e000769337f97c7de.png
-" class = "palette-object-images">
+" class="palette-object-images">
+    </div>
 
-      <div class = "canvas">
-        
-      </div>
+    <div class="canvas">
 
     </div>
+
 
 
   </body>
