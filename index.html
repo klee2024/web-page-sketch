@@ -2,71 +2,90 @@
   body {
     background-image: white;
   }
-  
+
   h1 {
     font-family: Brush Script MT;
   }
-  
+
   /*drop down source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_hover */
-  
-.dropbtn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-}
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
+  .dropbtn {
+    background-color: grey;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
 
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
 
-.dropdown-content a:hover {background-color: #ddd;}
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
 
-.dropdown:hover .dropdown-content {display: block;}
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
 
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
-  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown:hover .dropbtn {
+    background-color: gray;
+  }
 </style>
 
 <body>
-</head>
-<body style="background-color:white;">
-  <h1>
-    create your van gogh 
-  </h1>
+  </head>
+  <body style="background-color:white;">
+    <h1>
+      create your van gogh
+    </h1>
 
-  <div class="dropdown" style="float:right;">
-  <button class="dropbtn">photo credit</button>
-  <div class="dropdown-content">
-    <a href="https://www.rawpixel.com/image/3868884/illustration-image-art-vincent-van-gogh-people" target="_blank">image 1</a>
-    <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.craiyon.com%2Fimage%2Fim7GEdgtQeWbKuTEvoGopg&psig=AOvVaw1dtH3fnQtM4VzijPsnw8Et&ust=1713367425924000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNClkp2Fx4UDFQAAAAAdAAAAABAE" target="_blank">image 2</a>
-    <a href="        https://www.google.com/url?sa=i&url=https%3A%2F%2Fgacsach.vn%2F%3Fs%3Dgreen-wheat-fields-auvers-van-gogh-reproduction-vincent-van-aa-3mxGjGhZ&psig=AOvVaw0xKSHqiPXS-07rj75O96GY&ust=1713368062608000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMjNtciHx4UDFQAAAAAdAAAAABAJ
+    <div class="dropdown" style="float:right;">
+      <button class="dropbtn">photo credit</button>
+      <div class="dropdown-content">
+        <a href="https://www.rawpixel.com/image/3868884/illustration-image-art-vincent-van-gogh-people" target="_blank">image 1</a>
+        <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.craiyon.com%2Fimage%2Fim7GEdgtQeWbKuTEvoGopg&psig=AOvVaw1dtH3fnQtM4VzijPsnw8Et&ust=1713367425924000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNClkp2Fx4UDFQAAAAAdAAAAABAE" target="_blank">image 2</a>
+        <a href="        https://www.google.com/url?sa=i&url=https%3A%2F%2Fgacsach.vn%2F%3Fs%3Dgreen-wheat-fields-auvers-van-gogh-reproduction-vincent-van-aa-3mxGjGhZ&psig=AOvVaw0xKSHqiPXS-07rj75O96GY&ust=1713368062608000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMjNtciHx4UDFQAAAAAdAAAAABAJ
   " target="_blank">image 3</a>
-    <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fblog.fabrics-store.com%2F2023%2F09%2F01%2Ffs-colour-series-waffle-sky-inspired-by-vincent-van-goghs-swirling-skies%2F&psig=AOvVaw2tOrGA54OCRXqe2Aw6aj4Y&ust=1713368465771000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCICqspKJx4UDFQAAAAAdAAAAABAE" target="_blank">image 4</a>
-  </div>
-</div>
-  
+        <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fblog.fabrics-store.com%2F2023%2F09%2F01%2Ffs-colour-series-waffle-sky-inspired-by-vincent-van-goghs-swirling-skies%2F&psig=AOvVaw2tOrGA54OCRXqe2Aw6aj4Y&ust=1713368465771000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCICqspKJx4UDFQAAAAAdAAAAABAE" target="_blank">image 4</a>
+      </div>
+    </div>
+
+    <div label="paint-palette">
+      <img src="cloud3.png">
+      <img src="cloud2.png">
+      <img src="cloud1.png">
+      <img src="cypress.png">
+      <img src="clouds.png">
+      <img src="grass.png">
+      <img src="4dfc1140fc78606e000769337f97c7de.png
+">
+      <img src="sky.png">
+
+    </div>
 
 
-</body>
-<script>
-  // this is javascript code
-</script>
+  </body>
+
+
+  <script>
+    // this is javascript code
+  </script>
